@@ -10,5 +10,5 @@ Social media hub for devs
 
 ### deployment
 
-- [heroku](https://www.heroku.com/)
-- [vercel](https://vercel.com/)
+- [Heroku](https://www.heroku.com/)
+- [Vercel](https://vercel.com/)
