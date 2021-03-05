@@ -13,6 +13,7 @@ Social media hub for devs. See wireframe [here](https://www.figma.com/proto/j5k2
 - [Next js ](https://github.com/vercel/next.js/)
 - [Prisma](https://github.com/prisma/prisma)
 - [Typescript](https://github.com/microsoft/TypeScript)
+- [Chakra UI](https://github.com/chakra-ui/chakra-ui)
 
 ### deployment
 
