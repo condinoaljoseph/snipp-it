@@ -1,16 +1,6 @@
 import { GetServerSideProps } from 'next';
 import prisma from '../../lib/prisma';
-
-type PostProps = {
-	id: number;
-	title: string;
-	author: {
-		name: string;
-		email: string;
-	} | null;
-	content: string;
-	published: boolean;
-};
+import { PostProps } from '../../components/Post';
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 	const post = await prisma.post.findUnique({
