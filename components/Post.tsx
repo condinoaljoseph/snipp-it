@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import { useSession } from 'next-auth/client';
+import { SkeletonText } from '@chakra-ui/react';
 
 export type PostProps = {
 	id: number;
@@ -13,12 +15,19 @@ export type PostProps = {
 };
 
 const Post: React.FC<{ post: PostProps }> = ({ post }) => {
+	const [session, loading] = useSession();
+
 	return (
-		<h1>
-			<Link href={`/p/${post.id}`}>
-				<a>{post.title}</a>
-			</Link>
-		</h1>
+		<SkeletonText isLoaded={loading}>
+			<h1>
+				<Link href={`/p/${post.id}`}>
+					<a>
+						{post.title}
+						dfsdfsdfsdfdfsdfsdfsdfdfsdfsdfsdfdfsdfsdfsdfdfsdfsdfsdfdfsdfsdfsdfdfsdfsdfsdfdfsdfsdfsdfdfsdfsdfsdfdfsdfsdfsdf
+					</a>
+				</Link>
+			</h1>
+		</SkeletonText>
 	);
 };
 
