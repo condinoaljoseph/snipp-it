@@ -18,7 +18,7 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
 	const [session, loading] = useSession();
 
 	return (
-		<SkeletonText isLoaded={loading}>
+		<SkeletonText isLoaded={!loading}>
 			<h1>
 				<Link href={`/p/${post.id}`}>
 					<a>
