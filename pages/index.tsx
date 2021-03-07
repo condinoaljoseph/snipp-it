@@ -2,15 +2,14 @@ import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import prisma from '../lib/prisma';
 import Post, { PostProps } from '../components/Post';
-import Header from '../components/Header';
-import { Flex, Container } from '@chakra-ui/react';
+import Layout from '../components/Layout';
 
 export const getStaticProps: GetStaticProps = async () => {
 	const feed = await prisma.post.findMany({
 		where: { published: true },
 		include: {
 			author: {
-				select: { name: true }
+				select: { name: true, image: true }
 			}
 		}
 	});
@@ -25,14 +24,11 @@ export const Home: React.FC<{ feed: PostProps[] }> = ({ feed }) => {
 				<title>snipp-it</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Header />
-			<Flex>
-				<Container maxW={'container.lg'}>
-					{feed.map((post) => (
-						<Post key={post.id} post={post} />
-					))}
-				</Container>
-			</Flex>
+			<Layout>
+				{feed.map((post) => (
+					<Post key={post.id} post={post} />
+				))}
+			</Layout>
 		</>
 	);
 };
