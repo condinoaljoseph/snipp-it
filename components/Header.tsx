@@ -5,33 +5,58 @@ import {
 	Container,
 	Box,
 	Spacer,
-	Heading,
-	Button
+	Button,
+	Avatar,
+	Menu,
+	MenuButton,
+	MenuList,
+	MenuItem,
+	MenuDivider
 } from '@chakra-ui/react';
 
 const Header: React.FC = () => {
 	const [session, loading] = useSession();
+	console.log(session, 'hello');
 
 	return (
-		<Container maxW={'container.lg'} paddingY={2}>
-			<Flex alignItems="center">
-				<Box>
-					<Heading size="md">&lt;snipp-it&gt;</Heading>
-				</Box>
-				<Spacer />
-				<Box>
-					{!session ? (
-						<Link href="/api/auth/signin">
-							<a>Log in</a>
+		<Box paddingY={3} borderWidth="1px" bg="white">
+			<Container maxW={'container.lg'}>
+				<Flex alignItems="center">
+					<Box>
+						<Link href="/">
+							<a>snipp-it</a>
 						</Link>
-					) : (
-						<Button colorScheme="teal" mr="4" onClick={() => signOut()}>
-							Log out
-						</Button>
-					)}
-				</Box>
-			</Flex>
-		</Container>
+					</Box>
+					<Spacer />
+					<Box>
+						{!session ? (
+							<Link href="/api/auth/signin">
+								<Button colorScheme="teal" variant="link">
+									Login
+								</Button>
+							</Link>
+						) : (
+							<Menu flip={false}>
+								<MenuButton>
+									<Avatar
+										size="xs"
+										name="Dan Abrahmov"
+										src={session.user.image}
+									/>
+								</MenuButton>
+								<MenuList>
+									<MenuItem>Profile</MenuItem>
+									<MenuItem>Saved</MenuItem>
+									<MenuItem>Settings</MenuItem>
+									<MenuDivider />
+									<MenuItem onClick={() => signOut()}>Log Out</MenuItem>
+								</MenuList>
+							</Menu>
+						)}
+					</Box>
+				</Flex>
+			</Container>
+		</Box>
 	);
 };
 
