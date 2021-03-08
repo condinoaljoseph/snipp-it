@@ -76,19 +76,14 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
 						</Text>
 
 						<Stack direction="row" spacing={0} align="center" mt={3} ml={-3}>
-							<Button
-								leftIcon={<CheckIcon />}
-								colorScheme="teal"
-								size="sm"
-								variant="ghost"
-							>
+							<Button size="sm" variant="ghost" fontWeight="normal">
 								94 reactions
 							</Button>
 							<Button
 								leftIcon={<ChatIcon />}
-								colorScheme="teal"
 								size="sm"
 								variant="ghost"
+								fontWeight="normal"
 							>
 								12 comments
 							</Button>
