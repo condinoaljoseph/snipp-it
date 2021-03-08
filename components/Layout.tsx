@@ -83,10 +83,10 @@ const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
 												/>
 												<Box pl={2}>
 													<Text fontWeight="bold" fontSize="xs">
-														dan_abramov
+														prosper_otemuyiwa
 													</Text>
 													<Text color="gray.500" fontSize="xs">
-														Followed by ry
+														Followed by elpmid
 													</Text>
 												</Box>
 											</Flex>
@@ -113,10 +113,10 @@ const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
 												/>
 												<Box pl={2}>
 													<Text fontWeight="bold" fontSize="xs">
-														dan_abramov
+														ry
 													</Text>
 													<Text color="gray.500" fontSize="xs">
-														Followed by ry
+														Followed by vindecodex
 													</Text>
 												</Box>
 											</Flex>
@@ -143,10 +143,10 @@ const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
 												/>
 												<Box pl={2}>
 													<Text fontWeight="bold" fontSize="xs">
-														dan_abramov
+														kent
 													</Text>
 													<Text color="gray.500" fontSize="xs">
-														Followed by ry
+														Followed by condinoaj
 													</Text>
 												</Box>
 											</Flex>
@@ -173,10 +173,10 @@ const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
 												/>
 												<Box pl={2}>
 													<Text fontWeight="bold" fontSize="xs">
-														dan_abramov
+														kola
 													</Text>
 													<Text color="gray.500" fontSize="xs">
-														Followed by ry
+														Followed by vindecodex
 													</Text>
 												</Box>
 											</Flex>
