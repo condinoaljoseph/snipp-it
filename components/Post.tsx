@@ -35,7 +35,7 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
 					<Link href={`/p/${post.id}`}>
 						<a>
 							<Flex alignItems="center">
-								<SkeletonCircle size="10" isLoaded={!loading}>
+								<SkeletonCircle isLoaded={!loading}>
 									<Avatar
 										name={post.author.name}
 										src={post.author.image}
@@ -56,7 +56,7 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
 						</a>
 					</Link>
 				</Box>
-				<Box pl={16} pr={4} pb={4}>
+				<Box pl={14} pr={4} pb={4}>
 					<SkeletonText noOfLines={3} isLoaded={!loading}>
 						<Link href={`/p/${post.id}`}>
 							<a>
