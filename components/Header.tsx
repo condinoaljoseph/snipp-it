@@ -5,6 +5,7 @@ import {
 	Container,
 	Box,
 	IconButton,
+	Skeleton,
 	Spacer,
 	Button,
 	Avatar,
@@ -30,7 +31,13 @@ const Header: React.FC = () => {
 						<Box>
 							<Link href="/">
 								<a>
-									<Image src="/assets/snipp-it.png" alt="Snipp-it" maxW="55%" />
+									<Skeleton isLoaded={!loading}>
+										<Image
+											src="/assets/snipp-it.png"
+											alt="Snipp-it"
+											maxW="55%"
+										/>
+									</Skeleton>
 								</a>
 							</Link>
 						</Box>
