@@ -16,7 +16,6 @@ import {
 
 const Header: React.FC = () => {
 	const [session, loading] = useSession();
-	console.log(session, 'hello');
 
 	return (
 		<Box paddingY={3} borderWidth="1px" bg="white">
