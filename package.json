@@ -1,6 +1,6 @@
 {
   "name": "snipp-it testing it",
-  "version": "0.1.0",
+  "version": "0.1.0",so direct
   "private": true,
   "scripts": {
     "dev": "next dev",
