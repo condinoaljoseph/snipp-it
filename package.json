@@ -2,7 +2,7 @@
   "name": "snipp-it testing it",
   "version": "0.1.0",so direct
   "private": true,
-  "scripts": {
+  "scripts": {so thats it 
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
