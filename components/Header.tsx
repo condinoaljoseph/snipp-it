@@ -24,18 +24,18 @@ const Header: React.FC = () => {
 
 	return (
 		<Flex direction="column">
-			<Box flexBasis={50} />
+			<Box flexBasis="60px" />
 			<Box borderWidth="1px" bg="white" pos="fixed" top={0} w="100%" zIndex={2}>
 				<Container maxW={'container.lg'}>
-					<Flex alignItems="center" h="50px">
+					<Flex alignItems="center" h="60px">
 						<Box>
-							<Link href="/">
+							<Link href="/" passHref>
 								<a>
 									<Skeleton isLoaded={!loading}>
 										<Image
 											src="/assets/snipp-it.png"
 											alt="Snipp-it"
-											maxW="55%"
+											maxW="45%"
 										/>
 									</Skeleton>
 								</a>

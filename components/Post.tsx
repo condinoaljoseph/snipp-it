@@ -1,17 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useSession } from 'next-auth/client';
 import {
-	Stack,
 	Button,
 	Avatar,
 	Flex,
 	Text,
 	Box,
 	SkeletonCircle,
-	SkeletonText
+	SkeletonText,
+	IconButton,
+	HStack,
+	Spacer
 } from '@chakra-ui/react';
-import { CheckIcon, ChatIcon } from '@chakra-ui/icons';
+import { ChatIcon, DownloadIcon, AttachmentIcon } from '@chakra-ui/icons';
 
 export type PostProps = {
 	id: number;
@@ -31,8 +34,8 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
 	return (
 		<>
 			<Box borderWidth="1px" borderRadius="sm" mb={4} bg="white">
-				<Box p={4}>
-					<Link href={`/p/${post.id}`}>
+				<Box px={4} py={3}>
+					<Link href={`/u/${post.author.name}`} passHref>
 						<a>
 							<Flex alignItems="center">
 								<SkeletonCircle isLoaded={!loading}>
@@ -42,13 +45,10 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
 										size="sm"
 									/>
 								</SkeletonCircle>
-								<Box pl={2}>
+								<Box pl={3}>
 									<SkeletonText isLoaded={!loading} noOfLines={2}>
-										<Text fontWeight="bold" fontSize="xs">
+										<Text fontWeight="bold" fontSize="sm">
 											{post.author.name}
-										</Text>
-										<Text fontSize="xs" color="gray.600">
-											Mar 4 (2 days ago)
 										</Text>
 									</SkeletonText>
 								</Box>
@@ -56,39 +56,47 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
 						</a>
 					</Link>
 				</Box>
-				<Box pl={14} pr={4} pb={4}>
-					<SkeletonText noOfLines={3} isLoaded={!loading}>
-						<Link href={`/p/${post.id}`}>
-							<a>
-								<Text
-									fontWeight="extrabold"
-									fontSize="2xl"
-									lineHeight="125%"
-									mb={2}
-								>
-									{post.content}
-								</Text>
-							</a>
-						</Link>
-
-						<Text fontSize="sm" color="gray.600">
-							#motivation #css <div id="html"></div>
-						</Text>
-
-						<Stack direction="row" spacing={0} align="center" mt={3} ml={-3}>
-							<Button size="sm" variant="ghost" fontWeight="normal">
-								94 reactions
-							</Button>
-							<Button
-								leftIcon={<ChatIcon />}
-								size="sm"
-								variant="ghost"
-								fontWeight="normal"
-							>
-								12 comments
-							</Button>
-						</Stack>
+				<Box>
+					<Image
+						src="/assets/carbon.png"
+						alt="code"
+						width={1750}
+						height={768}
+						layout="responsive"
+					/>
+				</Box>
+				<Box px={5} py={4}>
+					<Flex alignItems="center" ml={-2} mt={-2}>
+						<HStack spacing="5px">
+							<Link href={`/p/${post.id}`} passHref>
+								<IconButton
+									aria-label="Share"
+									icon={<ChatIcon />}
+									variant="link"
+									borderRadius="full"
+									size="sm"
+								/>
+							</Link>
+						</HStack>
+						<Spacer />
+						<IconButton
+							mr={-2}
+							aria-label="Share"
+							icon={<AttachmentIcon />}
+							variant="unstyled"
+							borderRadius="full"
+							size="sm"
+						/>
+					</Flex>
+					<Button size="sm" variant="unstyled" fontWeight="bold">
+						94 likes
+					</Button>
+					<SkeletonText isLoaded={!loading} noOfLines={2}>
+						<Text fontSize="sm">{post.content}</Text>
 					</SkeletonText>
+					<Text fontSize="xs" color="gray.500" mt={2}>
+						5 DAYS AGO
+					</Text>
 				</Box>
 			</Box>
 		</>
