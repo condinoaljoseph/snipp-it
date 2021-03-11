@@ -3,7 +3,7 @@ import Header from './Header';
 import Aside, { UserProps } from './Aside';
 import { Box, Flex, Container, Spacer } from '@chakra-ui/react';
 
-const Layout: React.FC<{ children: ReactNode; users: UserProps[] }> = ({
+const Layout: React.FC<{ children: ReactNode; users?: UserProps[] }> = ({
 	children,
 	users
 }) => {
