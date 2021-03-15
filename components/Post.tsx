@@ -14,7 +14,7 @@ import {
 	HStack,
 	Spacer
 } from '@chakra-ui/react';
-import { ChatIcon, DownloadIcon, AttachmentIcon } from '@chakra-ui/icons';
+import { ChatIcon, AttachmentIcon } from '@chakra-ui/icons';
 
 export type PostProps = {
 	id: number;
@@ -58,10 +58,10 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
 				</Box>
 				<Box>
 					<Image
-						src="/assets/carbon.png"
+						src="/assets/example.png"
 						alt="code"
-						width={1750}
-						height={768}
+						width={1498}
+						height={985}
 						layout="responsive"
 					/>
 				</Box>
