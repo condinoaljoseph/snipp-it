@@ -3,6 +3,7 @@
 Social media hub for devs. See wireframe [here](https://www.figma.com/proto/j5k2HwZo4xUldyprIF7Jzw/DevCommunity?node-id=1%3A2&viewport=783%2C335%2C0.7666961550712585&scaling=min-zoom)
 
 ### feature plans
+
 - can add snippets and blog
 - can generate styled snippets (ie crawling carbon.now.sh to generate image snippets)
 - github oath with next-auth
@@ -19,3 +20,23 @@ Social media hub for devs. See wireframe [here](https://www.figma.com/proto/j5k2
 
 - [Heroku](https://www.heroku.com/)
 - [Vercel](https://vercel.com/)
+
+### how to contribute
+
+Install all dependency
+
+```bash
+npm install
+```
+
+Run the command to open Prisma Studio's interface
+
+```bash
+npx prisma studio
+```
+
+Run on development mode on your local machine
+
+```bash
+npm run dev
+```
