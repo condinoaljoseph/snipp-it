@@ -7,7 +7,7 @@ import { UserProps } from '@/components/Aside';
 import Layout from '@/components/Layout';
 
 export const getStaticProps: GetStaticProps = async () => {
-	const data = await fetcher('http://localhost:3000/api/');
+	const data = await fetcher(`${process.env.NEXTAUTH_URL}/api/`);
 	const { feed, users } = data;
 
 	return { props: { feed, users } };
