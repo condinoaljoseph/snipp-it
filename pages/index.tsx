@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import useSWR from 'swr';
 import fetcher from '@/lib/fetcher';
@@ -6,8 +6,8 @@ import Post, { PostProps } from '@/components/Post';
 import { UserProps } from '@/components/Aside';
 import Layout from '@/components/Layout';
 
-export const getStaticProps: GetStaticProps = async () => {
-	const data = await fetcher(`${process.env.NEXTAUTH_URL}/api/`);
+export const getServerSideProps: GetServerSideProps = async () => {
+	const data = await fetcher(`${process.env.NEXTAUTH_URL}/api`);
 	const { feed, users } = data;
 
 	return { props: { feed, users } };
@@ -25,8 +25,8 @@ export const Home: React.FC<{ feed: PostProps[]; users: UserProps[] }> = ({
 				<title>snipp-it</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Layout users={data.users}>
-				{data.feed.map((post) => (
+			<Layout users={data?.users}>
+				{data?.feed.map((post) => (
 					<Post key={post.id} post={post} />
 				))}
 			</Layout>
